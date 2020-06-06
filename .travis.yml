@@ -1,37 +1,21 @@
 language: java
 
-matrix:
-   include:
-      # always build this environment
-      - os: linux
-        dist: xenial
-        jdk: openjdk11
-        env: ADDITIONAL_MAVEN_ARGS="-Pjacoco coveralls:report"
-      # only on PR
-      - os: linux
-        dist: xenial
-        jdk: openjdk8
-        if: type IN (pull_request)
-      # only on PR or after merging a PR
-      - os: osx
-        osx_image: xcode10.1
-        if: type IN (pull_request) OR commit_message =~ /^Merge pull request/
-        
-TRAVIS_SECURE_ENV_VARS=true 
+# explicit distribution specification
+# to use xvfb as a service
+dist: xenial
+
+jdk: openjdk8
+
+git:
+  depth: false
+
+services:
+   - docker
+   - xvfb
 
 addons:
   sonarcloud:
     organization: "josephthachilgeorge"
-    token:
-      secure: "**************************" # encrypted value of your token
-      
-script:
-  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
-script:
-  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=JosephThachilGeorge_sonar-example
-    
 
 # skip installation step
 install: true
@@ -42,5 +26,4 @@ cache:
       - $HOME/.sonar/cache
 
 script:
-   - mvn -f simple-sonarqube-example/pom.xml clean org.jacoco:jacoco-maven-plugin:prepare-agent verify sonar:sonar
-    - mvn -f simple-sonarqube-example/pom.xml clean verify -Pjacoco sonar:sonar coveralls:report
+   - mvn -f sonar-example/pom.xml -Pjacoco clean verify sonar:sonar
