@@ -16,6 +16,8 @@ services:
 addons:
   sonarcloud:
     organization: "josephthachilgeorge"
+     secure: "PIi38P2wqMHEI0G03+KPF/HIHDikkhBMo188sEHKLADATfe9H1WCMJaXWLDNsGG379hDDeRa7Op0B+MezyFeFpWEjhvFTNaSbjVw7s9c1TqSvW5JbrHHOCYDKMsBT8LMAcACa1bLuK3nG/4pKiJm9zeNPyiv0yC5Kr5B4uexdHrtr9iIFW+GVSW0CEkvAgvzDEbmcSAhq/Yi4BxM7/kc4bJMrzreqZMPMKq6yAHQ7xucyZodjnPnM5Et3x6YTNYn/Io7HDDT6ToZe0KiWCpgRDmsjpgiaYgjNGoKg/4TjzI/zThkNkJ4h3Dyglfas5Fh/Y0rPeObwm4Wrpv+q4NI+apbemI0Wmt+aRuV7WD8G9jGYbFhMj1sZj86st4anR71MJQiKoaaWWLtU7ybvRDFakiLBC9d1ieQuVSWuWynxvwxf4p3R1HO+GQ0blNcBrw4J4E+dx3v10/4yj3ombHq619Uxj35kR/4hQ/6t/g2jxlzfBCar8H7OUazFcEfraCc6MyAe6NbpcYereVCApjuMQSLCsxzfa6IqPOfOxxOG88hOm08bbubZtfr2HEEHriWnERTVHVFAst0e98SubVqr/UXSPIC+MFggGUgRmpnbmKKwzFJiiX49sxRZNrCv4u4S4HOecECrvRsN8ls0JHS4mmciUOdvUtm+8KRmFx8cSM="
+    
   
 # skip installation step
 install: true
