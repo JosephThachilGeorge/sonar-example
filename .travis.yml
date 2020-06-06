@@ -43,4 +43,4 @@ cache:
 
 script:
    - mvn -f simple-sonarqube-example/pom.xml clean org.jacoco:jacoco-maven-plugin:prepare-agent verify sonar:sonar
-    - mvn -f spring-project/pom.xml clean verify -Pjacoco sonar:sonar coveralls:report
+    - mvn -f simple-sonarqube-example/pom.xml clean verify -Pjacoco sonar:sonar coveralls:report
