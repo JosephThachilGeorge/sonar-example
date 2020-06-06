@@ -16,6 +16,8 @@ services:
 addons:
   sonarcloud:
     organization: "josephthachilgeorge"
+    token:
+      secure: "AWS_SECRET_KEY" # encrypted value of your token
 
 # skip installation step
 install: true
