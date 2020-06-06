@@ -28,4 +28,5 @@ cache:
       - $HOME/.sonar/cache
 
 script:
+   - mvn sonar-scanner -X -Dsonar.host.url=https://sonarcloud.io/ -Dsonar.projectKey=JosephThachilGeorge_sonar-example
    - mvn -f simple-sonarqube-example/pom.xml -Pjacoco clean verify sonar:sonar
